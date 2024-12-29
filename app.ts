@@ -1,15 +1,14 @@
-function combine(input1: number | string, input2: number | string) {
-    let result;
-    if(typeof input1 === 'number' && typeof input2 === 'number') {
-        result = input1 + input2;
-    } else {
-        result = input1.toString() + input2.toString();
-    }
-    return result;
-  }
+let userInput: unknown;
+let userName: string;
 
-  const combineAges = combine(30, 26);
-  console.log(combineAges);
+userInput = 5;
+userInput = 'Max';
+if(typeof userInput === 'string') {
+    userName = userInput;
+}
 
-  const combineNames = combine('Max', 'Anna');
-  console.log(combineNames);
+function generateError(massage: string, code: number): never {
+    throw {massage: massage, errorCode: code};
+}
+
+generateError('오류가 발생했습니다!', 500);
